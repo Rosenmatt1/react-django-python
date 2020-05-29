@@ -31,9 +31,37 @@ downloads/
 eggs/
 .eggs/
 lib/
-lib64/
+lib64/# DJANGO
+*.log
+*.pot
+__pycache__/
+locals_ettings.py 
+db.sqlite3
+media
+
+# Django Pyton Stack
+*.py[cod]
+*$py.class
+
+# C Extentions
+*.so
+
 parts/
-sdist/
+sdist/# DJANGO
+*.log
+*.pot
+__pycache__/
+locals_ettings.py 
+db.sqlite3
+media
+
+# Django Pyton Stack
+*.py[cod]
+*$py.class
+
+# C Extentions
+*.so
+
 var/
 wheels/
 pip-wheel-metadata/
