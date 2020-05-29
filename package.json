@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Rosenmatt1/react-django-python/issues"
   },
-  "homepage": "https://github.com/Rosenmatt1/react-django-python#readme"
+  "homepage": "https://github.com/Rosenmatt1/react-django-python#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
 }
