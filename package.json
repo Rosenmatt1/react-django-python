@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development ./leadmanager/frontend/src/index.js --output./leadmanager/frontend/static/frontend/main.js",
+    "build": "webpack --mode build ./leadmanager/frontend/src/index.js --output./leadmanager/frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
@@ -32,3 +34,4 @@
     "react-dom": "^16.13.1"
   }
 }
+
