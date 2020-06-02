@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Header from './layout/Header';
 import Dashboard from './leads/Dashboard';
+import Chuck from './leads/Chuck';
 
 class App extends Component {
     render() {
@@ -12,6 +13,7 @@ class App extends Component {
                 <div className="container">
                     <Dashboard />
                 </div>
+                <Chuck />
             </Fragment>
         )
     }
