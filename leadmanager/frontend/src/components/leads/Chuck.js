@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function Chuck() {
+
+    const [jokes, setJokes] = useState([])
 
     // axios
     // .get("/api/leads/")
 
-    getRandomInt = (max) => {
+    const getRandomInt = (max) => {
         let min = 0
         return Math.floor(Math.random() * (max - min)) + min;
       }
     
-      generateQuote = () => {
+    const generateQuote = () => {
         const randomIndex = this.getRandomInt(this.state.jokes.length)
         const randomJoke = this.state.jokes[randomIndex]
         this.setState({
@@ -21,14 +23,14 @@ export default function Chuck() {
         sound.play()
       }
     
-      componentDidMount() {
+      useEffect(() => {
         fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
           .then(data => data.json())
           .then(JSONdata => {
             console.log(JSONdata)
             this.setState({ jokes: JSONdata.data.jokes })
           })
-      }
+      }, [])
 
     return (
         <div>
