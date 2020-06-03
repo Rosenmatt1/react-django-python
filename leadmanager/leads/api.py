@@ -8,5 +8,4 @@ class LeadViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = LeadSerializer    // axios
-    // .get("/api/leads/")
+    serializer_class = LeadSerializer    
