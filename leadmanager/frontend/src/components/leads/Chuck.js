@@ -35,8 +35,27 @@ export default function Chuck() {
       }, [])
 
     return (
-        <div>
-            <h1 onClick={() => generateQuote()}>Chuck Norris</h1>
+      <div className="container">
+      <div className="row justify-content-center py-5">
+        <div className="col-8 text-center">
+        <h1 onClick={() => generateQuote()}>Chuck Norris</h1>
+          {/* <img src={chuck} alt="chuck" style={{ height: "200px" }} /> */}
+          <h1 className="pb-2">Hello Chuck!</h1>
+          <p className="pb-2">An app for randomly generating Chuck Norris jokes.</p>
+          <button className="btn btn-danger btn-lg" onClick={() => generateQuote()}>Karate Chop</button>
         </div>
+      </div>
+      {/* <div className="row justify-content-center">
+        {this.state.wisdom || this.state.wisdom === 0
+          ? <Card
+            // title={this.state.jokes[this.state.wisdom].title}
+            quote={this.state.jokes[this.state.wisdom].joke}
+            tags={this.state.jokes[this.state.wisdom].categories} />
+          : <div></div>}
+      </div> */}
+      <p className="row justify-content-center"> {currentJoke} </p>
+    </div>
+
+
     )
 }
