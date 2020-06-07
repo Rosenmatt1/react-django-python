@@ -1,61 +1,54 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+// import chuck from "./chuck-norris.jpg";
 
 export default function Chuck() {
-    const [jokes, setJokes] = useState([])
-    const [currentJoke, setCurrentJoke] = useState([])
-    const [tag, setTag] = useState([])
+  const [jokes, setJokes] = useState([])
+  const [currentJoke, setCurrentJoke] = useState([])
+  const [tag, setTag] = useState([])
 
-    // axios
-    // .get("/api/leads/")
+  // axios
+  // .get("/api/leads/")
 
-    const getRandomInt = (max) => {
-        let min = 0
-        return Math.floor(Math.random() * (max - min)) + min;
-      }
-    
-    const generateQuote = () => {
-        const randomIndex = getRandomInt(jokes.length)
-        console.log("randomIndex", randomIndex)
-        const randomJoke = jokes[randomIndex]
-        console.log("randomJoke", randomJoke)
-      
-        setCurrentJoke(randomJoke.joke)
-        setTag(randomJoke.categories)
-        // var sound = new Audio("upper-cut.mp3")
-        // sound.play()
-      }
-    
-      useEffect(() => {
-        fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
-          .then(data => data.json())
-          .then(JSONdata => {
-            console.log("Chuck Data", JSONdata)
-            setJokes(JSONdata.data.jokes)
-          })
-      }, [])
+  const getRandomInt = (max) => {
+    let min = 0
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 
-    return (
-      <div className="container">
+  const generateQuote = () => {
+    const randomIndex = getRandomInt(jokes.length)
+    console.log("randomIndex", randomIndex)
+    const randomJoke = jokes[randomIndex]
+    console.log("randomJoke", randomJoke)
+
+    setCurrentJoke(randomJoke.joke)
+    setTag(randomJoke.categories)
+    var sound = new Audio("upper-cut.mp3")
+    sound.play()
+    console.log("this LOADED143")
+  }
+
+  useEffect(() => {
+    console.log("this LOADED143")
+    fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
+      .then(data => data.json())
+      .then(JSONdata => {
+        console.log("Chuck Data", JSONdata)
+        setJokes(JSONdata.data.jokes)
+      })
+  }, [])
+
+  return (
+    <div className="container">
       <div className="row justify-content-center py-5">
         <div className="col-8 text-center">
-        <h1 onClick={() => generateQuote()}>Chuck Norris</h1>
+          <h1 onClick={() => generateQuote()}>Chuck Norris</h1>
           {/* <img src={chuck} alt="chuck" style={{ height: "200px" }} /> */}
-          <h1 className="pb-2">Hello Chuck!</h1>
+          <h1 className="pb-2">Hello Chuck143!</h1>
           <p className="pb-2">An app for randomly generating Chuck Norris jokes.</p>
           <button className="btn btn-danger btn-lg" onClick={() => generateQuote()}>Karate Chop</button>
         </div>
       </div>
-      {/* <div className="row justify-content-center">
-        {this.state.wisdom || this.state.wisdom === 0
-          ? <Card
-            // title={this.state.jokes[this.state.wisdom].title}
-            quote={this.state.jokes[this.state.wisdom].joke}
-            tags={this.state.jokes[this.state.wisdom].categories} />
-          : <div></div>}
-      </div> */}
       <p className="row justify-content-center"> {currentJoke} </p>
     </div>
-
-
-    )
+  )
 }
