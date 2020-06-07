@@ -9,10 +9,6 @@ class App extends Component {
     render() {
         return (
             <Fragment>
-                <Header />
-                <div className="container">
-                    <Dashboard />
-                </div>
                 <Chuck />
             </Fragment>
         )
