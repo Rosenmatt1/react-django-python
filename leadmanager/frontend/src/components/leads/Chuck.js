@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import chuck from "./chuck-norris.jpg";
+import chuck from "./chuck-norris.png";
+
+// import html from './file.html';
 
 export default function Chuck() {
   const [jokes, setJokes] = useState([])
@@ -42,7 +44,7 @@ export default function Chuck() {
       <div className="row justify-content-center py-5">
         <div className="col-8 text-center">
           <h1 onClick={() => generateQuote()}>Chuck Norris</h1>
-          {/* <img src={chuck} alt="chuck" style={{ height: "200px" }} /> */}
+          <img src={chuck} alt="chuck" style={{ height: "200px" }} />
           <h1 className="pb-2">Hello Chuck143!</h1>
           <p className="pb-2">An app for randomly generating Chuck Norris jokes.</p>
           <button className="btn btn-danger btn-lg" onClick={() => generateQuote()}>Karate Chop</button>
