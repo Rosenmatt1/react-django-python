@@ -1,3 +1,7 @@
+var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
     module: {
         rules: [
@@ -8,8 +12,19 @@ module.exports = {
                     loader: "babel-loader"
                 },
             },
-            { test: /\.jpg$/, loader: 'file-loader' },
-            { test: /\.png$/, loader: 'url-loader' },
+            // { test: /\.jpg$/, loader: 'file-loader' },
+            // { test: /\.png$/, loader: 'url-loader' },
+            { test: /\.(jpg|png)$/, 
+                use: [
+                    {
+                        loaders: 'file-directory',
+                        options: {
+                            name: '[name].[ext]',
+                            
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.html$/i,
                 loader: 'html-loader',
