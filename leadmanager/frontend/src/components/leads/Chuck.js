@@ -24,8 +24,10 @@ export default function Chuck() {
     sound.play()
   }
 
+
   useEffect(() => {
-    fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
+    // fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
+    fetch("/api/leads/")
       .then(data => data.json())
       .then(JSONdata => {
         console.log("Chuck Data", JSONdata)
