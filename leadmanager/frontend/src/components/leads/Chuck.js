@@ -7,9 +7,6 @@ export default function Chuck() {
   const [currentJoke, setCurrentJoke] = useState([])
   const [tag, setTag] = useState([])
 
-  // axios
-  // .get("/api/leads/")
-
   const getRandomInt = (max) => {
     let min = 0
     return Math.floor(Math.random() * (max - min)) + min;
@@ -23,7 +20,6 @@ export default function Chuck() {
     var sound = new Audio("upper-cut.mp3")
     sound.play()
   }
-
 
   useEffect(() => {
     // fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
