@@ -1,11 +1,11 @@
-# from leads.models import Lead
-# from rest_framework import viewsets, permissions
-# from .serializers import LeadSerializer
+from chuck.models import Chuck
+from rest_framework import viewsets, permissions
+from .serializers import ChuckSerializer
 
-# #Lead Viewset
-# class LeadViewSet(viewsets.ModelViewSet):
-#     queryset = Lead.objects.all()
-#     permission_classes = [
-#         permissions.AllowAny
-#     ]
-#     serializer_class = LeadSerializer    
+#Lead Viewset
+class ChuckViewSet(viewsets.ModelViewSet):
+    queryset = Chuck.objects.all()
+    permission_classes = [
+        permissions.AllowAny
+    ]
+    serializer_class = ChuckSerializer    
