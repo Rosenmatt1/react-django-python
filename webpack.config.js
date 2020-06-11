@@ -14,32 +14,32 @@ module.exports = {
             },
             // { test: /\.jpg$/, loader: 'file-loader' },
             // { test: /\.png$/, loader: 'url-loader' },
-            { test: /\.(jpg|png)$/, 
-                use: [
-                    {
-                        loaders: 'file-directory',
-                        options: {
-                            name: '[name].[ext]',
+            // { test: /\.(jpg|png)$/, 
+            //     use: [
+            //         {
+            //             loaders: 'file-directory',
+            //             options: {
+            //                 name: '[name].[ext]',
                             
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.html$/i,
-                loader: 'html-loader',
-                options: {
-                    attributes: {
-                        list: [
-                            {
-                                tag: 'img',
-                                attribute: 'src',
-                                type: 'src',
-                            }
-                        ]
-                    }
-                }
-            }
+            //             }
+            //         }
+            //     ]
+            // },
+            // {
+            //     test: /\.html$/i,
+            //     loader: 'html-loader',
+            //     options: {
+            //         attributes: {
+            //             list: [
+            //                 {
+            //                     tag: 'img',
+            //                     attribute: 'src',
+            //                     type: 'src',
+            //                 }
+            //             ]
+            //         }
+            //     }
+            // }
         ]
     }
 }

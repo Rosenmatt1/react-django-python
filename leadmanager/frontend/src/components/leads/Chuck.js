@@ -23,7 +23,7 @@ export default function Chuck() {
 
   useEffect(() => {
     // fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
-    fetch("/api/leads/")
+    fetch("/api/chuck/")
       .then(data => data.json())
       .then(JSONdata => {
         console.log("Chuck Data", JSONdata)
