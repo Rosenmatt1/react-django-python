@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import chuck from "./chuck-norris.png";
 // import html from './file.html';
+import data from '../../../../chuck/data.json'
 
 export default function Chuck() {
   const [jokes, setJokes] = useState([])
@@ -17,18 +18,20 @@ export default function Chuck() {
     const randomJoke = jokes[randomIndex]
     setCurrentJoke(randomJoke.joke)
     setTag(randomJoke.categories)
-    var sound = new Audio("upper-cut.mp3")
-    sound.play()
+    // var sound = new Audio("upper-cut.mp3")
+    // sound.play()
   }
 
   useEffect(() => {
     // fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
-    fetch("/api/chuck/")
-      .then(data => data.json())
-      .then(JSONdata => {
-        console.log("Chuck Data", JSONdata)
-        setJokes(JSONdata.data.jokes)
-      })
+
+    // fetch("/api/chuck/")
+    //   .then(data => data.json())
+    //   .then(JSONdata => {
+    //     console.log("Chuck Data", JSONdata)
+    //     setJokes(JSONdata.data.jokes)
+    //   })
+    setJokes(data.jokes)
   }, [])
 
   return (
